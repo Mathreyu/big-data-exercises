@@ -15,10 +15,10 @@ public class MovieRecommenderTest {
     public void testDataInfo() throws IOException, TasteException {
         //download movies.txt.gz from 
         //    http://snap.stanford.edu/data/web-Movies.html
-        MovieRecommender recommender = new MovieRecommender("/path/to/movies.txt.gz");
-        assertEquals(7911684, recommender.getTotalReviews());
-        assertEquals(253059, recommender.getTotalProducts());
-        assertEquals(889176, recommender.getTotalUsers());
+        MovieRecommender recommender = new MovieRecommender("/home/rraya/GitProjects/Movie_Recommender/big-data-exercises/src/test/java/nearsoft/academy/bigdata/recommendation/movies.txt.gz");
+        assertEquals(7911684, recommender.getTotalReviews(), 0);
+        assertEquals(253059, recommender.getTotalProducts(), 0);
+        assertEquals(889176, recommender.getTotalUsers(), 0);
 
         List<String> recommendations = recommender.getRecommendationsForUser("A141HP4LYPWMSR");
         assertThat(recommendations, hasItem("B0002O7Y8U"));
@@ -26,5 +26,4 @@ public class MovieRecommenderTest {
         assertThat(recommendations, hasItem("B000063W82"));
 
     }
-
 }
